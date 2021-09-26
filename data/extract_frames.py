@@ -29,8 +29,8 @@ if __name__ == "__main__":
     video_paths = glob.glob(os.path.join(opt.dataset_path, "**", "*.avi"), recursive=True)
     for i, video_path in enumerate(video_paths):
         # print(111, video_path.split(".avi")[0])
-        sequence_type, sequence_name = video_path.split(".avi")[0].split("\\")[-2:]
-        sequence_path = os.path.join(f"{opt.dataset_path}-frames__", sequence_type, sequence_name)
+        sequence_type, sequence_name = video_path.split(".avi")[0].split("/")[-2:]
+        sequence_path = os.path.join(f"{opt.dataset_path}-frames", sequence_type, sequence_name)
 
         if os.path.exists(sequence_path):
             continue
